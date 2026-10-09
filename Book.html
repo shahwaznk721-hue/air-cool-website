@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AIR COOL | Book Repair</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f8fb;
+    color:#17202a;
+    line-height:1.6;
+}
+
+header{
+    background:#0877c9;
+    color:white;
+    padding:18px 20px;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0877c9,#12b5e5);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.form-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-card h2{
+    color:#0877c9;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-top:18px;
+    margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccd6dd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:0;
+    border-radius:30px;
+    background:#20bd59;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.note{
+    margin-top:20px;
+    background:#eef8ff;
+    padding:15px;
+    border-radius:10px;
+    font-size:14px;
+}
+
+footer{
+    background:#0877c9;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">❄️ AIR COOL</div>
+
+<nav>
+<a href="Index.html">Home</a>
+<a href="Services.html">Services</a>
+<a href="About.html">About</a>
+<a href="Contact.html">Contact</a>
+<a href="Book.html">Book Repair</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Book a Repair</h1>
+
+<p>Tell us about your appliance problem</p>
+
+</section>
+
+<div class="container">
+
+<div class="form-card">
+
+<h2>Repair Request</h2>
+
+<form onsubmit="sendWhatsApp(); return false;">
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+
+<label>Mobile Number</label>
+<input type="tel" id="phone" placeholder="Enter mobile number" required>
+
+<label>Select Appliance</label>
+
+<select id="appliance" required>
+
+<option value="">Choose appliance</option>
+<option>Refrigerator</option>
+<option>Washing Machine</option>
+<option>Air Conditioner</option>
+<option>Other</option>
+
+</select>
+
+<label>Problem</label>
+
+<textarea id="problem"
+placeholder="Describe the problem with your appliance"
+required></textarea>
+
+<label>Service Address</label>
+
+<textarea id="address"
+placeholder="Enter your complete address"
+required></textarea>
+
+<label>Preferred Date</label>
+
+<input type="date" id="date" required>
+
+<button type="submit">
+📲 Send Repair Request on WhatsApp
+</button>
+
+<div class="note">
+After submitting, WhatsApp will open with your repair
+details ready to send to AIR COOL.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>❄️ AIR COOL</h3>
+
+<p>Fridge & Washing Machine Repair Service</p>
+
+<p>📍 Mumbai, Maharashtra</p>
+
+<p>© 2026 AIR COOL. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+function sendWhatsApp(){
+
+    var name =
+    document.getElementById("name").value;
+
+    var phone =
+    document.getElementById("phone").value;
+
+    var appliance =
+    document.getElementById("appliance").value;
+
+    var problem =
+    document.getElementById("problem").value;
+
+    var address =
+    document.getElementById("address").value;
+
+    var date =
+    document.getElementById("date").value;
+
+    var message =
+    "AIR COOL Repair Request%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Mobile: " + encodeURIComponent(phone) + "%0A" +
+    "Appliance: " + encodeURIComponent(appliance) + "%0A" +
+    "Problem: " + encodeURIComponent(problem) + "%0A" +
+    "Address: " + encodeURIComponent(address) + "%0A" +
+    "Preferred Date: " + encodeURIComponent(date);
+
+    window.location.href =
+    "https://wa.me/91XXXXXXXXXX?text=" + message;
+}
+
+</script>
+
+</body>
+</html>
